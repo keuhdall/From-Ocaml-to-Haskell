@@ -5,7 +5,7 @@ ft_power n pow =
         else n * (ft_power n (pow - 1))
 
 main = do
-    print (ft_power 5 5)
-    print (ft_power 0 5)
-    print (ft_power 5 0)
-    print (ft_power 3 2)
+    print $ (ft_power 5 5)
+    print $ (ft_power 0 5)
+    print $ (ft_power 5 0)
+    print $ (ft_power 3 2)
