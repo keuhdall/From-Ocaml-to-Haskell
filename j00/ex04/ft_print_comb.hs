@@ -1,5 +1,3 @@
-import Text.Printf
-
 ft_print_comb () = print_nums 0 1 2 where
     print_nums x y z = do
         putStr $ show x
