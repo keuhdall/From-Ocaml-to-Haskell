@@ -2,10 +2,10 @@ import Data.Maybe
 
 repeat_string str i =
     repeat_loop i "" where
-        repeat_loop j s =
-            if (j < 0) then "Error"
-            else if (j == 0) then s
-            else repeat_loop (j - 1) (s ++ fromMaybe "x" str)
+        repeat_loop i s =
+            if (i < 0) then "Error"
+            else if (i == 0) then s
+            else repeat_loop (i - 1) (s ++ fromMaybe "x" str)
 
 main = do
     putStrLn $ repeat_string Nothing 5
