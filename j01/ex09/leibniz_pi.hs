@@ -1,9 +1,9 @@
 leibniz_pi max =
     if (max < 0.0) then -1
     else
-        let ref_pi = (4.0 * (atan 1.0)) in
-        let calc_leibniz h = 4.0 * (-1.0) ** h / (2 * h + 1) in
         calc_delta (calc_leibniz 0) 0 where
+            ref_pi = (4.0 * (atan 1.0))
+            calc_leibniz h = 4.0 * (-1.0) ** h / (2 * h + 1)
             calc_delta i j =
                 if (i - ref_pi >= 0.0) then
                     if (i - ref_pi <= max) then j
