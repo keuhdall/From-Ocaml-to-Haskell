@@ -17,11 +17,12 @@ lst_map f l = map_loop l [] where
         (hd:tl) -> map_loop tl (concat_lst new [f hd])
         []      -> new
 
+lst_cover :: (f -> a) -> l -> ()
 lst_cover f l = case l of
     (hd:tl) -> do
         f hd
         lst_cover f tl
-    []      -> IO ()
+    []      -> ()
 
 print_lst f seq = case seq of
     (hd:sc:tl)  -> do
@@ -31,7 +32,7 @@ print_lst f seq = case seq of
     (hd:tl)     -> do
         f print_int hd
         print_lst f tl
-    []          -> IO ()
+    []          -> ()
 
 gray n = gray_loop n [[]] where
     gray_loop n seq_ret =
@@ -40,7 +41,7 @@ gray n = gray_loop n [[]] where
             (prefix_lst 1) (reverse_lst seq_ret)))
 
 main = do
-    print_lst $ lst_cover $ gray 42
+    print_lst $ lst_cover (gray 42)
 {-main = do
     putStrLn "Test with [3] : "
     print_lst $ gray 3
