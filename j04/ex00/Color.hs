@@ -2,6 +2,7 @@ module Color (T(), all, toString, toStringVerbose) where
     import Prelude hiding (all)
     data T = Spade | Heart | Diamond | Club
 
+    all :: [T]
     all = [Spade, Heart, Diamond, Club]
 
     toString t = case t of
