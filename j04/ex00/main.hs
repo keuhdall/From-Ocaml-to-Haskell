@@ -4,7 +4,7 @@ print_list l = case l of
     (hd:tl) -> do
         putStrLn $ Color.toStringVerbose $ hd
         print_list tl
-    []      -> putStr ""
+    []      -> return ()
 
 
 
