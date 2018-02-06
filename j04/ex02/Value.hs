@@ -1,6 +1,6 @@
-module Value (T(), all, toInt, toString, toStringVerbose, next, previous) where
+module Value (T(..), all, toInt, toString, toStringVerbose, next, previous) where
     import Prelude hiding (all)
-    data T = T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9 | T10 | Jack | Queen | King | As
+    data T = T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9 | T10 | Jack | Queen | King | As deriving Eq
 
     all = [T2, T3, T4, T5, T6, T7, T8, T9, T10, Jack, Queen, King, As]
 

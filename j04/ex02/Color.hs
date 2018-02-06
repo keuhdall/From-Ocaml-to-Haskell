@@ -1,7 +1,7 @@
-module Color(T(), all, toString, toStringVerbose) where
+module Color(T(..), all, toString, toStringVerbose) where
     import Prelude hiding (all)
 
-    data T = Spade | Heart | Diamond | Club
+    data T = Spade | Heart | Diamond | Club deriving Eq
 
     all = [Spade, Heart, Diamond, Club]
 
