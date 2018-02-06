@@ -5,11 +5,11 @@ module Card(T(), newCard, allSpades, allHearts, allDiamonds, allClubs, all, getV
     import qualified Value
 
     data T = T {
-        color :: Color.T,
-        value :: Value.T
+        value :: Value.T,
+        color :: Color.T
     }
 
-    newCard newColor newValue = T { color=newColor, value=newValue }
+    newCard newValue newColor = T { value=newValue, color=newColor }
 
     allSpades :: [T]
     allSpades = fillAllSpades [] Value.T2 where
@@ -46,8 +46,8 @@ module Card(T(), newCard, allSpades, allHearts, allDiamonds, allClubs, all, getV
     
     all = allSpades ++ allHearts ++ allDiamonds ++ allClubs
 
-    getColor (T color _) = color
-    getValue (T _ value) = value
+    getColor (T _ color) = color
+    getValue (T value _) = value
 
     toString t = (Value.toString (value t)) ++ (Color.toString (color t))
     toStringVerbose t = "Card(" ++ (Value.toStringVerbose (value t)) ++ ", " ++ (Color.toStringVerbose (color t)) ++ ")"
