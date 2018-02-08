@@ -17,7 +17,7 @@ main = do
         cardQD = Card.newCard Value.Queen Color.Diamond
         cardAD = Card.newCard Value.As Color.Diamond
         cardAC = Card.newCard Value.As Color.Club
-        cardList = [card2S, card10H, cardKS, cardQD, cardAD, cardAC] in
+        cardList = [card2S, card10H, cardKS, cardQD, cardAD, cardAC] in do
             print_cards (Card.all)
             putStrLn "=== compare tests ==="
             putStrLn "compare 2S and 10H :"
@@ -44,15 +44,15 @@ main = do
             putStrLn (Card.toStringVerbose (Card.best cardList))
             putStrLn "=== isOf tests ===";
             putStrLn "is 10H of S ?"
-            putStrLn $ Card.isOf card10H Color.Spade
+            putStrLn $ show $ Card.isOf card10H Color.Spade
             putStrLn "is 10H of H ?"
-            putStrLn $ Card.isOf card10H Color.Heart
+            putStrLn $ show $ Card.isOf card10H Color.Heart
             putStrLn "=== isX tests ==="
             putStrLn "is 10H Spade ?"
-            putStrLn $ Card.isSpade card10H
+            putStrLn $ show $ Card.isSpade card10H
             putStrLn "is 10H Heart ?"
-            putStrLn $ Card.isHeart card10H
+            putStrLn $ show $ Card.isHeart card10H
             putStrLn "is 10H isDiamond ?"
-            putStrLn $ Card.isDiamond card10H
+            putStrLn $ show $ Card.isDiamond card10H
             putStrLn "is 10H Club ?"
-            putStrLn $ Card.isClub card10H
+            putStrLn $ show $ Card.isClub card10H
