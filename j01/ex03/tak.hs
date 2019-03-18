@@ -1,8 +1,7 @@
-tak x y z = tak_loop x y z where
-    tak_loop x y z =
-        if (x < y) then
-            tak_loop (tak_loop (x - 1) y z) (tak_loop (y - 1) z x) (tak_loop (z - 1) x y)
-        else z
+tak :: Int -> Int -> Int -> Int
+tak x y z 
+    | x < y = tak (tak (x-1) y z) (tak (y-1) z x) (tak (z-1) x y)
+    | otherwise = z
 
 main = do
     putStrLn $ show $ tak 1 2 3

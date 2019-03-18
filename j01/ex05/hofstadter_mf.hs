@@ -1,12 +1,14 @@
-hfs_f n =
-    if (n < 0) then -1
-    else if (n == 0) then 1
-    else n - (hfs_m $ hfs_f $ n - 1)
-  
-hfs_m n =
-    if (n < 0) then -1
-    else if (n == 0) then 0
-    else n - (hfs_f $ hfs_m $ n - 1)
+hfs_f :: Int -> Int
+hfs_f n
+    | n < 0 = -1
+    | n == 0 = 1
+    | otherwise = n - (hfs_m $ hfs_f $ n - 1)
+
+hfs_m :: Int -> Int
+hfs_m n
+    | n < 0 = -1
+    | n == 0 = 0
+    | otherwise = n - (hfs_f $ hfs_m $ n - 1)
   
 main = do
     putStrLn $ show $ hfs_m 0

@@ -1,8 +1,8 @@
-repeat_x i = repeat_loop i "" where
-    repeat_loop i s =
-        if (i < 0) then "Error"
-        else if (i == 0) then s
-        else repeat_loop (i - 1) (s ++ "x")
+repeat_x :: Int -> String
+repeat_x n
+    | n < 0 = "Error"
+    | n == 0 = ""
+    | otherwise = [0..n] >> "x"
 
 main = do
     putStrLn $ repeat_x (-5)

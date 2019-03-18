@@ -1,9 +1,9 @@
-ackermann m n = ackermann_loop m n where
-    ackermann_loop m n =
-        if (m == 0 && n >= 0) then n + 1
-        else if (m > 0 && n == 0) then ackermann_loop (m - 1) 1
-        else if (m > 0 && n > 0) then ackermann_loop (m - 1) (ackermann_loop m (n - 1))
-        else -1
+ackermann :: Int -> Int -> Int
+ackermann m n
+    | m == 0 && n >= 0 = n+1
+    | m > 0 && n == 0 = ackermann (m-1) 1
+    | m > 0 && n > 0 = ackermann (m-1) (ackermann m (n-1))
+    | otherwise = -1
 
 main = do
     putStrLn $ show $ ackermann (-1) 7
