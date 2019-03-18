@@ -1,9 +1,9 @@
-ft_countdown x =
-    if (x > 0) then do
-        putStrLn x
-        ft_countdown (x - 1)
-    else
-        putStrLn 0
+ft_countdown :: Int -> IO ()
+ft_countdown x
+    | x > 0 = do
+        print x
+        ft_countdown $ x-1
+    | otherwise = print 0
 
 main = do
     ft_countdown 5

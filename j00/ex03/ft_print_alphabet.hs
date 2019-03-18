@@ -1,11 +1,6 @@
 import Data.Char
 
-ft_print_alphabet () = print_char 'a' where
-    print_char c =
-        if (c <= 'z') then do
-            putStr (c:[])
-            print_char $ chr $ (ord c) + 1
-        else putStr "\n"
+ft_print_alphabet () = putStrLn ['a'..'z']
 
 main =
     ft_print_alphabet ()

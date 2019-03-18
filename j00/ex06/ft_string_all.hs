@@ -1,11 +1,5 @@
-ft_string_all f s = 
-    apply 0 where
-    apply n =
-        if (n < length s) then do
-            if (f (s !! n) == False) then False
-            else apply (n + 1)
-        else True
-
+ft_string_all :: (a -> Bool) -> [a] -> Bool
+ft_string_all f s = all f s
 
 main =
     let is_digit c = c >= '0' && c <= '9' in

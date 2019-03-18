@@ -1,14 +1,10 @@
 import Data.Char
 
-ft_rot_n n s =
-    map rot_char s where
-        rot_char c =
-            if (ord c >= ord 'a' && ord c <= ord 'z') then
-                chr $ (ord c - ord 'a' + n) `mod` 26 + ord 'a'
-            else if (ord c >= ord 'A' && ord c <= ord 'Z') then
-                chr $ (ord c - ord 'A' + n) `mod` 26 + ord 'A'
-            else
-                c
+ft_rot_n n s = map rot_char s where
+    rot_char c
+        | c `elem` ['a'..'z'] = chr $ (ord c - ord 'a' + n) `mod` 26 + ord 'a'
+        | c `elem` ['A'..'Z'] = chr $ (ord c - ord 'A' + n) `mod` 26 + ord 'A'
+        | otherwise = c
 
 main = do
     putStrLn $ ft_rot_n 1 "abcdefghijklmnopqrstuvwxyz"
