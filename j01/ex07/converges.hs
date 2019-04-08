@@ -1,8 +1,8 @@
 converges :: (Int -> Int) -> Int -> Int -> Bool
 converges f x n
-    | n < 0 = False
-    | n == -1 = False
-    | x == f x = True
+    | n < 0     = False
+    | n == -1   = False
+    | x == f x  = True
     | otherwise = converges f (f x) (n-1)
   
 main = do

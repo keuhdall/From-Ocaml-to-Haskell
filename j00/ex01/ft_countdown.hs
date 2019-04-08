@@ -1,8 +1,8 @@
 ft_countdown :: Int -> IO ()
 ft_countdown x
     | x > 0 = do
-        print x
-        ft_countdown $ x-1
+        mapM_ (putStr . show) [x, (x-1)..0]
+        putStr "\n"
     | otherwise = print 0
 
 main = do
